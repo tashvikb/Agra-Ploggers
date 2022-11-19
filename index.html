@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <title>Agra Ploggers - Home</title>
+  </head>
+  <body>
+    <h1 class="h1 heading">Agra Ploggers</h1>
+    <p class="normal-para mt-4">
+      We are making a plogging community 👨‍💼 in our <b>Agra</b> most of the cities
+      have there own plogging community 👨‍💼 or group like Pune, Kanpur, Kolkata,
+      Ahmedabad, Mumbai and many other cities. 🌏<br />
+    </p>
+    <p class="normal-para mt-2">
+      So <b>Agra</b> also need a Plogging community 👨‍💼 if you are interested you can view
+      this video and know about plogging and if you are really interested you
+      can fill the form. 📝 <br />
+      If we have sufficent member 👪 we will contact 📞 you so please fill the details
+      properly & correct. We are waiting for you to clean 🧹 the <b>Agra</b>.
+    </p>
+    <p class="news-para animate__animated animate__shakeX animate__delay-1s animate__repeat-2 mt-2">
+      <b>- Our First Plan is to clean 🧹 <a href="https://goo.gl/maps/SGa8meE5D6G8KzKt6" style="text-decoration: none;" target="_blank">Poiya Ghat</a>. 📍</b>
+    </p>
+    
+
+    <div class="v-container my-4">
+      <iframe
+        width="560"
+        height="315"
+        class="video"
+        src="https://www.youtube.com/embed/PHd_jN4UlhY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="form-container">
+      <h1 class="h1">Fill the Form</h1>
+
+      <form action="" method="post" id="agra-ploggers" name="agra-ploggers">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            id="data[name]"
+            placeholder="Example Sharma"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="number">Phone Number</label>
+          <input
+            type="number"
+            name="phone_number"
+            class="form-control"
+            id="number"
+            placeholder="9876543210"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              type="age"
+              name="age"
+              class="form-control"
+              id="number"
+              placeholder="13"
+            />
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" name="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="thoughts">Your Thoughts</label>
+          <textarea class="form-control" name="thoughts" id="thoughts" rows="4" placeholder="Your Message"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </form>
+    </div>
+
+    <div class="footer mt-5">
+      <div class="f-left">This site is made by Tashvik Bansal</div>
+      <div class="f-right">
+        <a href="https://www.github.com/tashvikb" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/the_doer_guy/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+    </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxbjjpgErj3Hz5IDSAtfwN3HlFn--FuKJCRPNvpOG07w0FJa_Cxh-WcjPU71WTAdCRf/exec'
+        const form = document.forms['agra-ploggers']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => window.open('submitted.html'))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+  </body>
+</html>
